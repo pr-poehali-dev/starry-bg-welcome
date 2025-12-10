@@ -62,21 +62,6 @@ const Index = () => {
                 но и приносят удовольствие пользователям. Люблю работать над сложными задачами 
                 и находить элегантные решения.
               </p>
-
-              <div className="flex flex-wrap gap-2 pt-4">
-                <Badge variant="secondary" className="text-sm px-3 py-1">
-                  Fullstack Development
-                </Badge>
-                <Badge variant="secondary" className="text-sm px-3 py-1">
-                  UI/UX Design
-                </Badge>
-                <Badge variant="secondary" className="text-sm px-3 py-1">
-                  Team Leadership
-                </Badge>
-                <Badge variant="secondary" className="text-sm px-3 py-1">
-                  Agile/Scrum
-                </Badge>
-              </div>
             </div>
           </Card>
         </section>
