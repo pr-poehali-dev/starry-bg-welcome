@@ -7,19 +7,30 @@ import { useEffect, useRef, useState } from "react";
 const Index = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [showOverlay, setShowOverlay] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.volume = 0.2;
+      audioRef.current.volume = 0.3;
     }
   }, []);
 
   const handleOverlayClick = () => {
     setShowOverlay(false);
+    toggleMusic();
+  };
+
+  const toggleMusic = () => {
     if (audioRef.current) {
-      audioRef.current.play().catch((error) => {
-        console.log("Autoplay prevented:", error);
-      });
+      if (isPlaying) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        audioRef.current.play().catch((error) => {
+          console.log("Autoplay prevented:", error);
+        });
+        setIsPlaying(true);
+      }
     }
   };
   const skills = [
@@ -51,6 +62,16 @@ const Index = () => {
       <audio ref={audioRef} loop className="hidden" crossOrigin="anonymous">
         <source src="https://rus.hitmotop.com/get/music/20250919/overtonight_throwaways_overtonight_-_mirrors_demo_79795292.mp3" type="audio/mpeg" />
       </audio>
+      
+      <Button
+        onClick={toggleMusic}
+        size="lg"
+        className="fixed bottom-8 right-8 z-40 rounded-full w-16 h-16 shadow-lg hover:scale-110 transition-transform"
+        variant={isPlaying ? "default" : "secondary"}
+      >
+        <Icon name={isPlaying ? "Pause" : "Play"} size={24} />
+      </Button>
+
       <div 
         className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
         style={{ backgroundImage: 'url(https://cdn.poehali.dev/files/1000036691.jpg)' }}
