@@ -5,12 +5,10 @@ import Icon from "@/components/ui/icon";
 
 const Index = () => {
   const skills = [
-    { name: "React", level: 90, category: "Frontend" },
     { name: "TypeScript", level: 85, category: "Frontend" },
-    { name: "Node.js", level: 80, category: "Backend" },
-    { name: "UI/UX Design", level: 75, category: "Design" },
     { name: "Python", level: 70, category: "Backend" },
-    { name: "Figma", level: 85, category: "Design" },
+    { name: "Creating a crew", level: 75, category: "Skills" },
+    { name: "Creating a web", level: 60, category: "Skills" },
   ];
 
   const contacts = [
