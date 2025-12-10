@@ -12,13 +12,16 @@ const Index = () => {
   ];
 
   const contacts = [
-    { icon: "Mail", label: "Email", value: "hello@example.com", link: "mailto:hello@example.com" },
-    { icon: "Github", label: "GitHub", value: "github.com/username", link: "https://github.com" },
-    { icon: "Linkedin", label: "LinkedIn", value: "linkedin.com/in/username", link: "https://linkedin.com" },
+    { icon: "Mail", label: "Email", value: "yuyy8550@gmail.com", link: "mailto:yuyy8550@gmail.com" },
+    { icon: "Github", label: "GitHub", value: "github.com/D9ziloy", link: "https://github.com/D9ziloy" },
+    { icon: "AtSign", label: "Username", value: "@D9ziloy", link: "#" },
   ];
 
   return (
     <div className="min-h-screen bg-background relative">
+      <audio autoPlay loop className="hidden">
+        <source src="https://cdn.poehali.dev/files/mirrors-demo.mp3" type="audio/mpeg" />
+      </audio>
       <div 
         className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
         style={{ backgroundImage: 'url(https://cdn.poehali.dev/files/1000036691.jpg)' }}
@@ -35,9 +38,11 @@ const Index = () => {
           </div>
 
           <div className="flex gap-4 mt-8">
-            <Button size="lg" className="gap-2">
-              <Icon name="Mail" size={20} />
-              Связаться
+            <Button size="lg" className="gap-2" asChild>
+              <a href="mailto:yuyy8550@gmail.com">
+                <Icon name="Mail" size={20} />
+                Связаться
+              </a>
             </Button>
           </div>
         </section>
