@@ -2,8 +2,16 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
+import { useEffect, useRef } from "react";
 
 const Index = () => {
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.2;
+    }
+  }, []);
   const skills = [
     { name: "TypeScript", level: 85, category: "Frontend" },
     { name: "Python", level: 70, category: "Backend" },
@@ -19,8 +27,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      <audio autoPlay loop className="hidden">
-        <source src="https://cdn.poehali.dev/files/mirrors-demo.mp3" type="audio/mpeg" />
+      <audio ref={audioRef} autoPlay loop className="hidden">
+        <source src="https://rus.hitmotop.com/get/music/20250919/overtonight_throwaways_overtonight_-_mirrors_demo_79795292.mp3" type="audio/mpeg" />
       </audio>
       <div 
         className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
