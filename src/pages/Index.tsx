@@ -17,7 +17,9 @@ const Index = () => {
   const handleOverlayClick = () => {
     setShowOverlay(false);
     if (audioRef.current) {
-      audioRef.current.play();
+      audioRef.current.play().catch((error) => {
+        console.log("Autoplay prevented:", error);
+      });
     }
   };
   const skills = [
@@ -46,7 +48,7 @@ const Index = () => {
           </div>
         </div>
       )}
-      <audio ref={audioRef} loop className="hidden">
+      <audio ref={audioRef} loop className="hidden" crossOrigin="anonymous">
         <source src="https://rus.hitmotop.com/get/music/20250919/overtonight_throwaways_overtonight_-_mirrors_demo_79795292.mp3" type="audio/mpeg" />
       </audio>
       <div 
