@@ -127,7 +127,7 @@ const Index = () => {
         </section>
 
         <footer className="mt-24 pt-8 border-t border-border text-center text-muted-foreground animate-fade-in" style={{ animationDelay: "0.8s" }}>
-          <p>© 2024 Все права защищены</p>
+          <p>все на своих местах.</p>
         </footer>
       </div>
     </div>
