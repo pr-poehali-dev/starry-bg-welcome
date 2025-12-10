@@ -25,7 +25,7 @@ const Index = () => {
         <section className="mb-24 animate-fade-in">
           <div className="mb-8">
             <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-              Привет, я разработчик
+              Welcome Beck Rekvion
             </h1>
             <p className="text-xl text-muted-foreground">
               Создаю современные веб-приложения с фокусом на UX и производительность
