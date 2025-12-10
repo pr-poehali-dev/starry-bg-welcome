@@ -62,15 +62,6 @@ const Index = () => {
       <audio ref={audioRef} loop className="hidden" crossOrigin="anonymous">
         <source src="https://rus.hitmotop.com/get/music/20250919/overtonight_throwaways_overtonight_-_mirrors_demo_79795292.mp3" type="audio/mpeg" />
       </audio>
-      
-      <Button
-        onClick={toggleMusic}
-        size="lg"
-        className="fixed bottom-8 right-8 z-40 rounded-full w-16 h-16 shadow-lg hover:scale-110 transition-transform"
-        variant={isPlaying ? "default" : "secondary"}
-      >
-        <Icon name={isPlaying ? "Pause" : "Play"} size={24} />
-      </Button>
 
       <div 
         className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
@@ -87,12 +78,22 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="flex gap-4 mt-8">
-            <Button size="lg" className="gap-2" asChild>
+          <div className="flex flex-col gap-4 mt-8">
+            <Button size="lg" className="gap-2 w-fit" asChild>
               <a href="mailto:yuyy8550@gmail.com">
                 <Icon name="Mail" size={20} />
                 Связаться
               </a>
+            </Button>
+            
+            <Button
+              onClick={toggleMusic}
+              size="lg"
+              className="gap-2 w-fit"
+              variant={isPlaying ? "default" : "secondary"}
+            >
+              <Icon name={isPlaying ? "Pause" : "Play"} size={20} />
+              {isPlaying ? "Остановить музыку" : "Включить музыку"}
             </Button>
           </div>
         </section>
