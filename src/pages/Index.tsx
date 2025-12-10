@@ -18,8 +18,12 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16 max-w-5xl">
+    <div className="min-h-screen bg-background relative">
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
+        style={{ backgroundImage: 'url(https://cdn.poehali.dev/files/1000036691.jpg)' }}
+      />
+      <div className="container mx-auto px-4 py-16 max-w-5xl relative z-10">
         <section className="mb-24 animate-fade-in">
           <div className="mb-8">
             <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
