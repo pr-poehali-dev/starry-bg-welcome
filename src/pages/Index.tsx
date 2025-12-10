@@ -35,10 +35,6 @@ const Index = () => {
               <Icon name="Mail" size={20} />
               Связаться
             </Button>
-            <Button size="lg" variant="outline" className="gap-2">
-              <Icon name="Download" size={20} />
-              Скачать резюме
-            </Button>
           </div>
         </section>
 
