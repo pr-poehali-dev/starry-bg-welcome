@@ -53,14 +53,7 @@ const Index = () => {
           <Card className="p-8 bg-card border-border hover:border-primary transition-colors duration-300">
             <div className="space-y-6 text-foreground">
               <p className="text-lg leading-relaxed">
-                Я — fullstack разработчик с более чем 5 годами опыта в создании веб-приложений. 
-                Специализируюсь на React, TypeScript и современных фреймворках.
-              </p>
-              
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                Моя цель — создавать продукты, которые не только решают бизнес-задачи, 
-                но и приносят удовольствие пользователям. Люблю работать над сложными задачами 
-                и находить элегантные решения.
+                Я Rekvion познаю скрипт-текста создание сайтов и многие другие коды
               </p>
             </div>
           </Card>
