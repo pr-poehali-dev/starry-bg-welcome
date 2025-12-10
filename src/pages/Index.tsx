@@ -28,7 +28,7 @@ const Index = () => {
               Welcome Beck Rekvion
             </h1>
             <p className="text-xl text-muted-foreground">
-              Создаю современные веб-приложения с фокусом на UX и производительность
+              Я делаю жизнь лучше своими идеями
             </p>
           </div>
 
