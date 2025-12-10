@@ -2,16 +2,24 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Index = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [showOverlay, setShowOverlay] = useState(true);
 
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = 0.2;
     }
   }, []);
+
+  const handleOverlayClick = () => {
+    setShowOverlay(false);
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
   const skills = [
     { name: "TypeScript", level: 85, category: "Frontend" },
     { name: "Python", level: 70, category: "Backend" },
@@ -27,7 +35,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      <audio ref={audioRef} autoPlay loop className="hidden">
+      {showOverlay && (
+        <div 
+          onClick={handleOverlayClick}
+          className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center cursor-pointer animate-fade-in backdrop-blur-sm"
+        >
+          <div className="text-center space-y-4">
+            <h2 className="text-4xl font-bold text-white">Нажмите везде чтобы продолжить</h2>
+            <p className="text-xl text-white/80 animate-pulse">👆 Кликните в любом месте</p>
+          </div>
+        </div>
+      )}
+      <audio ref={audioRef} loop className="hidden">
         <source src="https://rus.hitmotop.com/get/music/20250919/overtonight_throwaways_overtonight_-_mirrors_demo_79795292.mp3" type="audio/mpeg" />
       </audio>
       <div 
